@@ -80,15 +80,13 @@ function run_again2() {
     }  
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    if (textArray.length) setTimeout(type, newTextDelay);
-})
+
 
 navSlide();
 
 const onclicklisten = document.addEventListener("click", function() {
-    listElement = document.querySelectorAll('.nav_links li a');
-    listElement.classList.add("active");
+    listElement = document.querySelector('.nav_links li a');
+    listElement.classList.toggle("active");
 });
 
 function slidename() {
@@ -100,3 +98,64 @@ function slidename() {
 }
 setTimeout(slidename, 200);
 
+const flightPath = {
+    curviness:1,
+    autoRotate:true,
+    values: [
+        {x:25, y:0}
+    ]
+}
+const flightPathPara = {
+    curviness:0,
+    autoRotate:true,
+    values: [
+        {x:30, y:0}
+    ]
+}
+
+const abouttween = new TimelineLite();
+const skillstween = new TimelineLite();
+
+abouttween.add (
+    TweenLite.to('.abouthead', 1, {
+        bezier: flightPath,
+        ease: Power1.easeInOut
+    })
+    
+);
+abouttween.add (
+    TweenLite.to('.abtparagraph', 1, {
+        bezier: flightPathPara,
+        ease: Power1.easeInOut
+    })
+);
+
+skillstween.add (
+    TweenLite.to('.skillshead', 1, {
+        bezier: flightPath,
+        ease: Power2.easeInOut
+    })
+);
+
+
+const aboutcontroller = new ScrollMagic.Controller();
+
+const aboutscene = new ScrollMagic.Scene({
+    triggerElement: ".about",
+    duration: 300,
+    triggerHook: 0.6
+
+})
+.setTween(abouttween)
+.addTo(aboutcontroller);
+
+const skillscontroller = new ScrollMagic.Controller();
+
+const skillsscene = new ScrollMagic.Scene({
+    triggerElement: ".skills",
+    duration: 300,
+    triggerHook: 0.6
+
+})
+.setTween(skillstween)
+.addTo(skillscontroller);
