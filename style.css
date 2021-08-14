@@ -101,7 +101,6 @@ section {
 
 nav {
     display: flex;
-    margin-top: 10px;
     justify-content: space-around;
     align-items: center;
     min-height: 8vh;
@@ -172,7 +171,7 @@ li {
           flex-direction: column;
           align-items: center;
           width: 40%;
-          transform: translateX(100%);
+          transform: translateX(110%);
           transition: transform 0.5s ease-in;
           z-index: 4;
     }
@@ -361,7 +360,7 @@ li {
     color:rgb(151, 247, 210);
     letter-spacing: 3px;
     transition: 1s ease;
-    transform: translateX(-120%);
+    transform: translateX(-100%);
     cursor: default;
 }
 
@@ -369,23 +368,15 @@ li {
     color:rgb(252, 2, 98);
 }
 
-.about {
-    display:flex;
 
-    
+.about {
+    overflow: hidden;
 }
 
 .skills {
-    display: flex;
+    overflow:hidden;
 }
 
-.abtcontainer2 {
-    height: 200px;
-    position: relative;
-    top: 20%;
-    left: 15%;
-
-}
 
 .abtparagraph {
     position: relative;
@@ -397,6 +388,44 @@ li {
     color:aliceblue;
     width: 500px;
     transform: translateX(-150%);
+    transition: 1s ease;
+
+}
+.person{
+    transform: rotateZ(45deg);
+    transition: 1s ease;
+}
+.person.apear2{
+    transform: rotateZ(0deg);
+    
 }
 
+.abtsvg {
+    display: block;
+    position: relative;
+    top: 10%;
+    transform: translateX(150%);
+    transition: 1s ease;
+}
 
+.abtsvg.apear{
+    transform: translateX(35%);
+}
+
+.textsvgabt {
+    display:flex;
+    justify-content: space-around;
+    position:fixed;
+    top: 30px;
+    left: 40px;
+    width: 100vh;
+    font-size: 30px;
+    font-family: 'Ubuntu', sans-serif;
+    color:rgb(252, 2, 98);
+    transition: 1s ease;
+    
+}
+
+.textsvgabt:hover {
+    color:rgb(151, 247, 210);
+}

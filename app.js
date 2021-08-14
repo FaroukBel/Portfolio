@@ -105,35 +105,19 @@ const flightPath = {
         {x:25, y:0}
     ]
 }
-const flightPathPara = {
-    curviness:0,
-    autoRotate:true,
-    values: [
-        {x:30, y:0}
-    ]
-}
+
 
 const abouttween = new TimelineLite();
 const skillstween = new TimelineLite();
+const abtElement = document.getElementById('abtid');
+const abtParaElement = document.getElementById('abtparagraph2');
 
+
+const elementsArray = [abtElement, abtParaElement];
 abouttween.add (
-    TweenLite.to('.abouthead', 1, {
+    TweenLite.to(elementsArray, 1, {
         bezier: flightPath,
         ease: Power1.easeInOut
-    })
-    
-);
-abouttween.add (
-    TweenLite.to('.abtparagraph', 1, {
-        bezier: flightPathPara,
-        ease: Power1.easeInOut
-    })
-);
-
-skillstween.add (
-    TweenLite.to('.skillshead', 1, {
-        bezier: flightPath,
-        ease: Power2.easeInOut
     })
 );
 
@@ -142,11 +126,27 @@ const aboutcontroller = new ScrollMagic.Controller();
 
 const aboutscene = new ScrollMagic.Scene({
     triggerElement: ".about",
-    duration: 300,
-    triggerHook: 0.6
+    duration: 300
 
 })
 .setTween(abouttween)
+.addTo(aboutcontroller);
+
+const aboutscenesvg = new ScrollMagic.Scene({
+    triggerElement: ".about",
+    duration: 2000,
+    triggerHook: 0.2
+
+})
+.setClassToggle('.abtsvg', 'apear')
+.addTo(aboutcontroller);
+
+const aboutsceneperson = new ScrollMagic.Scene({
+    triggerElement: ".about",
+    duration: 1000,
+    triggerHook: 0.1
+})
+.setClassToggle('.person', 'apear2')
 .addTo(aboutcontroller);
 
 const skillscontroller = new ScrollMagic.Controller();
