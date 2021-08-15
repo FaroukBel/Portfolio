@@ -30,10 +30,6 @@ const newTextDelay = 1000;
 let charIndex = 0;
 let textArrayIndex = 0;
 
-
-
-
-
 function type_name() {
     if(charIndex < textArray[textArrayIndex].length) {
         if (!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
@@ -98,7 +94,7 @@ function slidename() {
 }
 setTimeout(slidename, 200);
 
-const flightPath = {
+const flightPathAbt = {
     curviness:1,
     autoRotate:true,
     values: [
@@ -108,7 +104,6 @@ const flightPath = {
 
 
 const abouttween = new TimelineLite();
-const skillstween = new TimelineLite();
 const abtElement = document.getElementById('abtid');
 const abtParaElement = document.getElementById('abtparagraph2');
 
@@ -116,10 +111,21 @@ const abtParaElement = document.getElementById('abtparagraph2');
 const elementsArray = [abtElement, abtParaElement];
 abouttween.add (
     TweenLite.to(elementsArray, 1, {
-        bezier: flightPath,
+        bezier: flightPathAbt,
         ease: Power1.easeInOut
     })
 );
+
+const textMeController = new ScrollMagic.Controller();
+
+const contactscene = new ScrollMagic.Scene({
+    triggerElement: ".text_below",
+    duration: 3000,
+    triggerHook: 0
+
+})
+.setClassToggle(".textMe", "pop-up")
+.addTo(textMeController);
 
 
 const aboutcontroller = new ScrollMagic.Controller();
@@ -146,16 +152,35 @@ const aboutsceneperson = new ScrollMagic.Scene({
     duration: 1000,
     triggerHook: 0.1
 })
-.setClassToggle('.person', 'apear2')
+.setClassToggle('.person', 'apearPerson')
 .addTo(aboutcontroller);
+
+const aboutscenetext = new ScrollMagic.Scene({
+    triggerElement: ".about",
+    duration: 1000,
+    triggerHook: 0.1
+})
+.setClassToggle('.textsvgabt', 'apearText')
+.addTo(aboutcontroller);
+
+
+// skills Selection
+
 
 const skillscontroller = new ScrollMagic.Controller();
 
+
+const skillstween = new TimelineLite();
+const skillElement = document.getElementById('skills');
+
+
+
+
 const skillsscene = new ScrollMagic.Scene({
     triggerElement: ".skills",
-    duration: 300,
+    duration: 1000,
     triggerHook: 0.6
 
 })
-.setTween(skillstween)
+.setClassToggle(".skillshead", "pop-up2")
 .addTo(skillscontroller);
