@@ -89,7 +89,7 @@ function slidename() {
     const containerslide = document.querySelector('.container2');
     const contactslide = document.querySelector('.contact');
     const homesvgslide = document.querySelector('.homesvg');
-    homesvgslide.classList.add('slide')
+    homesvgslide.classList.add('slides')
     containerslide.classList.add('open');
     contactslide.classList.add('get');
     type_name();
@@ -193,16 +193,9 @@ const aboutscenetextAuto = new ScrollMagic.Scene({
 
 // Skills Selection
 
-
 const skillscontroller = new ScrollMagic.Controller();
-
-
 const skillstween = new TimelineLite();
 const skillElement = document.getElementById('skills');
-
-
-
-
 const skillsscene = new ScrollMagic.Scene({
     triggerElement: ".skills",
     duration: 3000,
@@ -219,4 +212,13 @@ const skillsscenebg = new ScrollMagic.Scene({
 
 })
 .setClassToggle(".skillsbg", "fade-in")
+.addTo(skillscontroller);
+
+const skillssceneSvg= new ScrollMagic.Scene({
+    triggerElement: ".skills",
+    duration: 3000,
+    triggerHook: 0.8
+
+})
+.setClassToggle(".skillssvg", "apear")
 .addTo(skillscontroller);

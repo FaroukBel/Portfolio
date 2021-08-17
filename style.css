@@ -71,7 +71,7 @@ body {
 }
 
 main {
-    display: flex;
+    display: block;
     background: rgb(51, 51, 51);
     flex-direction: column;
     justify-content: center;
@@ -84,14 +84,14 @@ main {
     justify-content: space-around;
     align-items: center;
     /* overflow-y: auto; */
-    /* height: 99vh; */
     z-index: 3;
 }
 
 section {
     display: flex;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(0px);
     border-radius:10px;
+    
   
 }
 
@@ -393,21 +393,21 @@ li {
 .homesvg {
     position: absolute;
     top: 30px;
-    right: -60px;
     z-index: 1;
     transition: 1s ease;
     opacity: 0;
-    transform: translateX(150%);
+    transform: translateX(75%);
+    height: 742px;
+    width: 864px;
 }
 
-.homesvg.slide{
-    transform: translateX(0%);
+.homesvg.slides{
     opacity: 1;
 }
 
 
 .homesvg:hover{
-    transform: translateX(-5%);
+    transform: translateX(70%);
 }
 
 .about {
@@ -535,11 +535,13 @@ li {
 .skillssvg {
     z-index: 1;
     position:absolute;
-    top: 10px;
+    top: 20px;
     left: 40px;
-    width: 700px;
-    background:rgb(0, 250, 154);
-
+    opacity: 0;
+    transition: 2s ease;
+}
+.skillssvg.apear {
+    opacity: 1;
 }
 #projects {
     margin-top: 20%;
