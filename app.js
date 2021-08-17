@@ -88,6 +88,8 @@ const onclicklisten = document.addEventListener("click", function() {
 function slidename() {
     const containerslide = document.querySelector('.container2');
     const contactslide = document.querySelector('.contact');
+    const homesvgslide = document.querySelector('.homesvg');
+    homesvgslide.classList.add('slide')
     containerslide.classList.add('open');
     contactslide.classList.add('get');
     type_name();
@@ -138,6 +140,15 @@ const aboutscene = new ScrollMagic.Scene({
 .setTween(abouttween)
 .addTo(aboutcontroller);
 
+const aboutsceneBg = new ScrollMagic.Scene({
+    triggerElement: ".about",
+    duration: 3000,
+    triggerHook:0.6
+
+})
+.setClassToggle(".abtbg", "fade-in")
+.addTo(aboutcontroller);
+
 const aboutscenesvg = new ScrollMagic.Scene({
     triggerElement: ".about",
     duration: 2000,
@@ -150,7 +161,7 @@ const aboutscenesvg = new ScrollMagic.Scene({
 const aboutsceneperson = new ScrollMagic.Scene({
     triggerElement: ".about",
     duration: 1000,
-    triggerHook: 0.1
+    triggerHook: 0.2
 })
 .setClassToggle('.person', 'apearPerson')
 .addTo(aboutcontroller);
@@ -158,13 +169,29 @@ const aboutsceneperson = new ScrollMagic.Scene({
 const aboutscenetext = new ScrollMagic.Scene({
     triggerElement: ".about",
     duration: 1000,
-    triggerHook: 0.1
+    triggerHook: 0.2
 })
 .setClassToggle('.textsvgabt', 'apearText')
 .addTo(aboutcontroller);
 
+const aboutscenetextCrs = new ScrollMagic.Scene({
+    triggerElement: ".about",
+    duration: 1000,
+    triggerHook: 0.2
+})
+.setClassToggle('#Curious', 'slide-in')
+.addTo(aboutcontroller);
 
-// skills Selection
+const aboutscenetextAuto = new ScrollMagic.Scene({
+    triggerElement: ".about",
+    duration: 1000,
+    triggerHook: 0.2
+})
+.setClassToggle('#Autonome', 'slide-in')
+.addTo(aboutcontroller);
+
+
+// Skills Selection
 
 
 const skillscontroller = new ScrollMagic.Controller();
@@ -178,9 +205,18 @@ const skillElement = document.getElementById('skills');
 
 const skillsscene = new ScrollMagic.Scene({
     triggerElement: ".skills",
-    duration: 1000,
+    duration: 3000,
     triggerHook: 0.6
 
 })
-.setClassToggle(".skillshead", "pop-up2")
+.setClassToggle(".skillshead", "pop-up")
+.addTo(skillscontroller);
+
+const skillsscenebg = new ScrollMagic.Scene({
+    triggerElement: ".skills",
+    duration: 3000,
+    triggerHook: 0.8
+
+})
+.setClassToggle(".skillsbg", "fade-in")
 .addTo(skillscontroller);

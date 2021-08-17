@@ -56,17 +56,18 @@
 }
 
 body {
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
-    width: 10px;  
-    background: transparent;
+    width: 5px; 
+    background: rgb(51, 51, 51);
 }
 
 ::-webkit-scrollbar-thumb {
     background: aquamarine;
-    border-radius: 15px;   
+    border-radius: 15px;
 }
 
 main {
@@ -78,21 +79,22 @@ main {
 }
 
 .container {
-    overflow-y: auto;
-    height: 99vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    /* overflow-y: auto; */
+    /* height: 99vh; */
     z-index: 3;
-    margin-top: 10px;
 }
 
 section {
     display: flex;
-    height: 100vh;
-    width: 100vw;
     backdrop-filter: blur(5px);
     border-radius:10px;
-    overflow: hidden;
   
 }
+
 
 nav {
     display: flex;
@@ -101,7 +103,7 @@ nav {
     min-height: 8vh;
     backdrop-filter: blur(10px);
     color:aliceblue;
-    width: 99%;
+    width: 100%;
     position: fixed;
     top:0px;
     left:0px;
@@ -145,11 +147,6 @@ li {
     transition: all 0.3s ease;
 }
 
-/* @media screen and (max-width:1200px){
-    .nav_links {
-        width: 100%;    
-    }
-} */
 
 @media screen and (max-width:720px){
     body {
@@ -351,19 +348,7 @@ li {
 }
 
 
-.abouthead{
-    font-size: 50px;
-    font-family: 'Ubuntu', sans-serif;
-    margin-left: 20px;
-    margin-top: 30%;
-    text-align: left;
-    line-height: 60px;
-    color:rgb(151, 247, 210);
-    letter-spacing: 3px;
-    transition: 1s ease;
-    transform: translateX(-100%);
-    cursor: default;
-}
+
 
 #Vector_12 {
     fill: #353349;
@@ -378,40 +363,84 @@ li {
     fill: rgb(109, 214, 179);
 }
 
-.skillshead {
-    position: absolute;
-    right: 20px;
-    top: 100px;
-    font-size: 50px;
-    font-family: 'Ubuntu', sans-serif;
-    
-    text-align: left;
-    color:rgb(151, 247, 210);
-    letter-spacing: 3px;
-    transition: 1s ease;
-    transform: translateX(150%);
-    cursor: default;
-}
 
-.skillshead.pop-up2{
-    transform: translateX(0%);
-}
 
 .abouthead:hover , .skillshead:hover {
     color:rgb(252, 2, 98);
 }
 
+.home {
+    margin-top: 2%;
+    height:90vh;
+    width: 95vw;
+    
+}
+
+.homebg {
+    background: linear-gradient(to right, rgb(252, 2, 98), aquamarine);
+    position: fixed;
+    z-index: 0;
+    top: 70px;
+    left: 0;
+    height: 85vh;
+    width: 95vw;
+    border-radius: 15px;
+    transition: 1s ease ;
+    opacity: 1;
+
+}
+
+.homesvg {
+    position: absolute;
+    top: 30px;
+    right: -60px;
+    z-index: 1;
+    transition: 1s ease;
+    opacity: 0;
+    transform: translateX(150%);
+}
+
+.homesvg.slide{
+    transform: translateX(0%);
+    opacity: 1;
+}
+
+
+.homesvg:hover{
+    transform: translateX(-5%);
+}
 
 .about {
-    overflow: hidden;
-    z-index: 2;
+    margin-top: 5%;
+    height: 99vh;
+    width: 99vw;
+
 }
-
-.skills {
-    overflow:hidden;
+.abouthead{
+    font-size: 50px;
+    font-family: 'Ubuntu', sans-serif;
+    margin-left: 20px;
+    margin-top: 50%;
+    text-align: left;
+    line-height: 60px;
+    color:rgb(151, 247, 210);
+    letter-spacing: 3px;
+    transition: 1s ease;
+    transform: translateX(-100%);
+    cursor: default;
 }
-
-
+.abtsvg {
+    position: absolute;
+    top: 23%;
+    right: 35px;
+    transform: translateX(150%);
+    transition: 1s ease;
+    opacity: 0.5;
+}
+.abtsvg.apear{
+    opacity: 1;
+    transform: translateX(2%);
+}
 .abtparagraph {
     position: relative;
     left: 20px;
@@ -420,11 +449,105 @@ li {
     font-family: 'Roboto Mono', monospace;
     line-height: 40px;
     color:aliceblue;
-    width: 500px;
+    width: 420px;
     transform: translateX(-150%);
-    transition: 1s ease;
+    transition: 0.5s ease;
+    cursor: default;
+}
+
+.abtparagraph:hover {
+    line-height: 50px;
+}
+.abtbg {
+    position: fixed;
+    z-index: 0;
+    top: 90px;
+    left: 0;
+    height: 85vh;
+    width: 99vw;
+    border-radius: 15px;
+    transition: 1s ease ;
+    background: linear-gradient(to top right, rgb(252, 2, 98), aquamarine);
+    opacity: 0;
+}
+.abtbg.fade-in {
+    opacity: 1;
 
 }
+
+.skills {
+    height: 80vh;
+    width: 99vw;
+    transition: 1s ease ;
+}
+
+.skillshead {
+    position: absolute;
+    right: 20px;
+    top: 100px;
+    font-size: 50px;
+    font-family: 'Ubuntu', sans-serif;
+    color:aquamarine;
+    text-align: left;
+    letter-spacing: 3px;
+    transition: 1s ease;
+    transform: translateX(150%);
+    cursor: default;
+}
+
+.skillshead.pop-up{
+    transform: translateX(0%);
+}
+
+.skillparagraph {
+    position: fixed;
+    right: 0px;
+    top: 100px;
+    font-size: 20px;
+    font-family: 'Roboto Mono', monospace;
+    line-height: 40px;
+    color:aliceblue;
+    transition: 0.5s ease;
+    cursor: default;
+}
+
+.skillparagraph:hover {
+    line-height: 50px;
+}
+
+.skillsbg {
+    position: fixed;
+    z-index: 0;
+    top: 90px;
+    left: 0;
+    height: 85vh;
+    width: 99vw;
+    border-radius: 15px;
+    transition: 1s ease ;
+    background: linear-gradient(to bottom right, aquamarine, rgb(252, 2, 98));
+    opacity: 0;
+}
+
+.skillsbg.fade-in {
+    opacity: 1;
+}
+
+.skillssvg {
+    z-index: 1;
+    position:absolute;
+    top: 10px;
+    left: 40px;
+    width: 700px;
+    background:rgb(0, 250, 154);
+
+}
+#projects {
+    margin-top: 20%;
+    height: 80vh;
+    width: 99vw;
+    transition: 1s ease ;
+}
+
 .person {
     transform: translate(-40%, 50%);
     transition: 1s ease;
@@ -435,19 +558,11 @@ li {
     
 }
 
-.abtsvg {
-    position: relative;
-    top: 10%;
-    right: 10px;
-    transform: translateX(150%);
-    transition: 1s ease;
-}
 
-.abtsvg.apear{
-    transform: translateX(28%);
-}
 
-.textsvgabt {
+
+
+.textsvgabt{
     display:flex;
     flex-direction: column;
     justify-content: space-around;
@@ -484,7 +599,6 @@ li {
 }
 #Ambisious:hover {
     transform: rotateZ(90deg) translateY(50%);
-
 }
 #Creative {
     position: absolute;
@@ -507,17 +621,53 @@ li {
     letter-spacing: 10px;
     font-size: 15px;
     transition: 1s ease;
+}
+
+
+#Curious {
+    position: absolute;
+    font-size: 100px;
+    top: 40px;
+    left: -420px;
+    letter-spacing: 70px;
+    transition: 1.5s ease;
+    font-family: "Roboto Mono", monospace;
+    color: aliceblue;
+    transform: translateX(150%);
+}
+
+#Autonome {
+    position: absolute;
+    font-size: 30px;
+    top: 250px;
+    left: -555px;
+    letter-spacing: 30px;
+    transition: 2s ease;
+    font-family: "Roboto Mono", monospace;
+    transform: rotateZ(90deg) translateX(20%);
+    color: aquamarine;
+    opacity: 0;
+
+}
+#Curious:hover {
+    color:aquamarine;
+    letter-spacing: 50px;
+}
+
+#Autonome:hover {
+    color:aliceblue;
+
+}
+#Curious.slide-in {
+    transform: translateX(0%);
+}
+
+#Autonome.slide-in {
+    transform: rotateZ(90deg) translateX(0%);
+    opacity: 1;
 
 }
 
-.homebg {
-    
-    height:9vh;
-    width: 10rem;
-    position: relative;
-    top: 400px;
-    background:chocolate;
-}
 
 
 @keyframes bganimations {
@@ -531,7 +681,7 @@ li {
 
 
 .textMe {
-    position: absolute;
+    position: fixed;
     top: 90vh;
     right: 0px;
     z-index: 10;
