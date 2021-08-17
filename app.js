@@ -76,17 +76,9 @@ function run_again2() {
     }  
 }
 
-
-
 navSlide();
-
-const onclicklisten = document.addEventListener("click", function() {
-    listElement = document.querySelector('.nav_links li a');
-    listElement.classList.toggle("active");
-});
-
 function slidename() {
-    const containerslide = document.querySelector('.container2');
+    const containerslide = document.querySelector('.head-cont');
     const contactslide = document.querySelector('.contact');
     const homesvgslide = document.querySelector('.homesvg');
     homesvgslide.classList.add('slides')
@@ -222,3 +214,43 @@ const skillssceneSvg= new ScrollMagic.Scene({
 })
 .setClassToggle(".skillssvg", "apear")
 .addTo(skillscontroller);
+
+
+const sections = document.querySelectorAll('section');
+const navLi = document.querySelectorAll('nav ul li');
+
+
+const projcontroller = new ScrollMagic.Controller();
+
+
+
+const projsceneBg = new ScrollMagic.Scene({
+    triggerElement: "#project",
+    duration: 3000,
+    triggerHook: 0.5
+
+})
+.setClassToggle(".projbg", "apear")
+.addTo(skillscontroller);
+
+
+
+
+
+
+window.addEventListener('scroll', ()=> {
+    let current = '';
+    sections.forEach( section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if(pageYOffset >= (sectionTop - sectionHeight/2)) {
+            current = section.getAttribute('id');
+        }
+    })
+    navLi.forEach(li => {
+        li.classList.remove('active');
+        if(li.classList.contains(current)) {
+            li.classList.add('active');
+        }
+    })
+})

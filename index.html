@@ -13,24 +13,23 @@
     
     <main>
         <nav>
-            <ul class="nav_links">
-                <li><a class = "act" href="#home">Home</a></li>
-                <li><a class = "" href="#about">About</a></li>
-                <li><a class = "" href="#skills">Skills</a></li>
-                <li><a class = "" href="#projects">Projects</a></li>
-                <li><a class = "" href="#contacts">Contacts</a></li>
-            </ul>            
+            <div class="cont">
+                <ul>
+                    <li class="homes active"><a href="#homes">Home</a></li>
+                    <li class="aboutme"><a href="#aboutme">About</a></li>
+                    <li class="skill"><a href="#skill">Skills</a></li>
+                    <li class="project"><a href="#project">Projects</a></li>
+                    <li class="contacts"><a href="#contact">Contacts</a></li>
+                </ul>    
+            </div>
+    
             <div class="burger">
                 <div class="line1"></div>
                 <div class="line2"></div>
                 <div class="line3"></div>
             </div>
         </nav>
-        <!-- <div class="bgcontainer">
-            <div class="homebg">
-            </div>
-
-        </div> -->
+    
         <div class="textMe">
             <a href="#contacts">
                 <img class='emailimg' src="/images/email_pink.png" alt="Text Me">
@@ -41,7 +40,7 @@
         
         <div class='container'>
             
-            <section class = 'home' id='home'>
+            <section class = 'home' id='homes'>
                 <div class="homesvg">
                     <svg width="864" height="742" viewBox="0 0 864 742" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="FB">
@@ -84,7 +83,7 @@
                         
                 </div>
                 <div class="homebg"></div>
-                <div class="container2">
+                <div class="head-cont">
                     <div id="intro_head">
                         <p onmouseover="run_again(this)">Hi, I'm Farouk,</p>
                         <span class="intro_head"></span><span class="cursor">&nbsp;</span>
@@ -98,7 +97,7 @@
      
             </section>
             
-            <section class='about' id='about'>
+            <section class='about' id='aboutme'>
                 <div class="abtbg"></div>
                 
                 <div class="abtcontainer">
@@ -156,7 +155,7 @@
                 </div>
                 
             </section>
-            <section class = 'skills' id='skills'>
+            <section class = 'skills' id='skill'>
                 <div class="skillsbg"></div>
                 <div id="skills" class="skillshead">
                     <h1>What can I do ?</h1>
@@ -317,9 +316,10 @@
                     </svg>      
                 </div>
             </section>
-            <section id='projects'>
+            <section id='project'>
+                <div class="projbg"></div>
                 <div class="projectshead">
-                    <h1>ProjectsS</h1>
+                    <h1>What did I do ? </h1>
                 </div>
 
             </section>
