@@ -220,6 +220,8 @@ const sections = document.querySelectorAll('section');
 const navLi = document.querySelectorAll('nav ul li');
 
 
+// PROJECTS CONTROLLER
+
 const projcontroller = new ScrollMagic.Controller();
 
 
@@ -231,7 +233,74 @@ const projsceneBg = new ScrollMagic.Scene({
 
 })
 .setClassToggle(".projbg", "apear")
-.addTo(skillscontroller);
+.addTo(projcontroller);
+
+const projsceneHead = new ScrollMagic.Scene({
+    triggerElement: "#project",
+    duration: 3000,
+    triggerHook: 0.5
+
+})
+.setClassToggle(".projectshead", "slide")
+.addTo(projcontroller);
+const projsceneproj_1 = new ScrollMagic.Scene({
+    triggerElement: "#project",
+    duration: 3000,
+    triggerHook: 0.5
+
+})
+.setClassToggle(".img-1", "apear")
+.addTo(projcontroller);
+const projsceneproj_2 = new ScrollMagic.Scene({
+    triggerElement: "#project",
+    duration: 3000,
+    triggerHook: 0.5
+
+})
+.setClassToggle(".img-2", "apear")
+.addTo(projcontroller);
+
+const projsceneproj_3 = new ScrollMagic.Scene({
+    triggerElement: "#project",
+    duration: 3000,
+    triggerHook: 0.5
+
+})
+.setClassToggle(".img-3", "apear")
+.addTo(projcontroller);
+
+const projsceneproj_4 = new ScrollMagic.Scene({
+    triggerElement: "#project",
+    duration: 3000,
+    triggerHook: 0.5
+
+})
+.setClassToggle(".img-4", "apear")
+.addTo(projcontroller);
+
+// Contacts controller
+
+const contcontroller = new ScrollMagic.Controller();
+
+const contactscenehead = new ScrollMagic.Scene({
+    triggerElement: "#contacts",
+    duration: 3000,
+    triggerHook: 0.5
+
+})
+.setClassToggle(".contactshead", "slide")
+.addTo(contcontroller);
+
+const contactscenebg = new ScrollMagic.Scene({
+    triggerElement: "#contacts",
+    duration: 3000,
+    triggerHook: 0.5
+
+})
+.setClassToggle(".contactsbg", "apear")
+.addTo(contcontroller);
+
+
 
 
 
