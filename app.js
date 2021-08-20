@@ -1,7 +1,7 @@
 const navSlide = () => {
     const burger = document.querySelector('.burger');
-    const nav = document.querySelector('.nav_links');
-    const navLinks = document.querySelectorAll('.nav_links li');
+    const nav = document.querySelector('nav .cont ul');
+    const navLinks = document.querySelectorAll('nav .cont ul li');
 
     burger.addEventListener('click', () => {
         nav.classList.toggle('nav-active');
@@ -80,8 +80,6 @@ navSlide();
 function slidename() {
     const containerslide = document.querySelector('.head-cont');
     const contactslide = document.querySelector('.contact');
-    const homesvgslide = document.querySelector('.homesvg');
-    homesvgslide.classList.add('slides')
     containerslide.classList.add('open');
     contactslide.classList.add('get');
     type_name();
@@ -132,19 +130,12 @@ const aboutscene = new ScrollMagic.Scene({
 .setTween(abouttween)
 .addTo(aboutcontroller);
 
-const aboutsceneBg = new ScrollMagic.Scene({
-    triggerElement: ".about",
-    duration: 3000,
-    triggerHook:0.6
 
-})
-.setClassToggle(".abtbg", "fade-in")
-.addTo(aboutcontroller);
 
 const aboutscenesvg = new ScrollMagic.Scene({
     triggerElement: ".about",
     duration: 2000,
-    triggerHook: 0.2
+    triggerHook: 0.6
 
 })
 .setClassToggle('.abtsvg', 'apear')
@@ -153,7 +144,7 @@ const aboutscenesvg = new ScrollMagic.Scene({
 const aboutsceneperson = new ScrollMagic.Scene({
     triggerElement: ".about",
     duration: 1000,
-    triggerHook: 0.2
+    triggerHook: 0.6
 })
 .setClassToggle('.person', 'apearPerson')
 .addTo(aboutcontroller);
@@ -161,7 +152,7 @@ const aboutsceneperson = new ScrollMagic.Scene({
 const aboutscenetext = new ScrollMagic.Scene({
     triggerElement: ".about",
     duration: 1000,
-    triggerHook: 0.2
+    triggerHook: 0.6
 })
 .setClassToggle('.textsvgabt', 'apearText')
 .addTo(aboutcontroller);
@@ -169,7 +160,7 @@ const aboutscenetext = new ScrollMagic.Scene({
 const aboutscenetextCrs = new ScrollMagic.Scene({
     triggerElement: ".about",
     duration: 1000,
-    triggerHook: 0.2
+    triggerHook: 0.6
 })
 .setClassToggle('#Curious', 'slide-in')
 .addTo(aboutcontroller);
@@ -177,7 +168,7 @@ const aboutscenetextCrs = new ScrollMagic.Scene({
 const aboutscenetextAuto = new ScrollMagic.Scene({
     triggerElement: ".about",
     duration: 1000,
-    triggerHook: 0.2
+    triggerHook: 0.6
 })
 .setClassToggle('#Autonome', 'slide-in')
 .addTo(aboutcontroller);
@@ -322,4 +313,8 @@ window.addEventListener('scroll', ()=> {
             li.classList.add('active');
         }
     })
-})
+});
+
+$('#inner-poly').hover(function () {
+    $('#outer-poly').toggleClass('outer-poly-hover');
+});
