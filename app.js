@@ -128,6 +128,7 @@ const aboutscene = new ScrollMagic.Scene({
 
 })
 .setTween(abouttween)
+
 .addTo(aboutcontroller);
 
 
@@ -138,29 +139,10 @@ const aboutscenesvg = new ScrollMagic.Scene({
     triggerHook: 0.6
 
 })
-.setClassToggle('.abtsvg', 'apear')
-.addTo(aboutcontroller);
-
-const aboutsceneperson = new ScrollMagic.Scene({
-    triggerElement: ".about",
-    duration: 1000,
-    triggerHook: 0.6
-})
-.setClassToggle('.person', 'apearPerson')
-.addTo(aboutcontroller);
-
-const aboutscenetext = new ScrollMagic.Scene({
-    triggerElement: ".about",
-    duration: 1000,
-    triggerHook: 0.6
-})
-.setClassToggle('.textsvgabt', 'apearText')
-.addTo(aboutcontroller);
-
-const aboutscenetextCrs = new ScrollMagic.Scene({
-    triggerElement: ".about",
-    duration: 1000,
-    triggerHook: 0.6
+.on("start", function(){
+    $(".abtsvg").toggleClass('apear');
+    $(".person").toggleClass('apearPerson');
+    $(".textsvgabt").toggleClass('apearText');
 })
 .setClassToggle('#Curious', 'slide-in')
 .addTo(aboutcontroller);
@@ -176,26 +158,34 @@ const aboutscenetextAuto = new ScrollMagic.Scene({
 
 // Skills Selection
 
+const skillElement = document.getElementsByClassName('skillshead');
+const skillParaElement = document.getElementsByClassName('skillparagraph');
+const skilltween = new TimelineLite();
+
+const flightPathSkill = {
+    curviness:1,
+    values: [
+        {x:0, y:0}
+    ]
+}
+const skillElementsArray = [skillElement, skillParaElement];
+skilltween.add (
+    TweenLite.to(skillElementsArray, 1, {
+        bezier: flightPathSkill,
+        ease: Power1.easeInOut
+    })
+);
+
 const skillscontroller = new ScrollMagic.Controller();
-const skillstween = new TimelineLite();
-const skillElement = document.getElementById('skills');
 const skillsscene = new ScrollMagic.Scene({
     triggerElement: ".skills",
-    duration: 3000,
-    triggerHook: 0.6
+    duration: 300
 
 })
-.setClassToggle(".skillshead", "pop-up")
+
+.setTween(skilltween)
 .addTo(skillscontroller);
 
-const skillsscenebg = new ScrollMagic.Scene({
-    triggerElement: ".skills",
-    duration: 3000,
-    triggerHook: 0.8
-
-})
-.setClassToggle(".skillsbg", "fade-in")
-.addTo(skillscontroller);
 
 const skillssceneSvg= new ScrollMagic.Scene({
     triggerElement: ".skills",
@@ -216,16 +206,6 @@ const navLi = document.querySelectorAll('nav ul li');
 const projcontroller = new ScrollMagic.Controller();
 
 
-
-const projsceneBg = new ScrollMagic.Scene({
-    triggerElement: "#project",
-    duration: 3000,
-    triggerHook: 0.5
-
-})
-.setClassToggle(".projbg", "apear")
-.addTo(projcontroller);
-
 const projsceneHead = new ScrollMagic.Scene({
     triggerElement: "#project",
     duration: 3000,
@@ -234,40 +214,16 @@ const projsceneHead = new ScrollMagic.Scene({
 })
 .setClassToggle(".projectshead", "slide")
 .addTo(projcontroller);
+
 const projsceneproj_1 = new ScrollMagic.Scene({
     triggerElement: "#project",
     duration: 3000,
     triggerHook: 0.5
 
 })
-.setClassToggle(".img-1", "apear")
-.addTo(projcontroller);
-const projsceneproj_2 = new ScrollMagic.Scene({
-    triggerElement: "#project",
-    duration: 3000,
-    triggerHook: 0.5
-
-})
-.setClassToggle(".img-2", "apear")
+.setClassToggle(".box", "apear")
 .addTo(projcontroller);
 
-const projsceneproj_3 = new ScrollMagic.Scene({
-    triggerElement: "#project",
-    duration: 3000,
-    triggerHook: 0.5
-
-})
-.setClassToggle(".img-3", "apear")
-.addTo(projcontroller);
-
-const projsceneproj_4 = new ScrollMagic.Scene({
-    triggerElement: "#project",
-    duration: 3000,
-    triggerHook: 0.5
-
-})
-.setClassToggle(".img-4", "apear")
-.addTo(projcontroller);
 
 // Contacts controller
 
@@ -290,13 +246,6 @@ const contactscenebg = new ScrollMagic.Scene({
 })
 .setClassToggle(".contactsbg", "apear")
 .addTo(contcontroller);
-
-
-
-
-
-
-
 
 window.addEventListener('scroll', ()=> {
     let current = '';
