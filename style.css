@@ -80,11 +80,6 @@ main {
     overflow-y: auto; */
 }
 
-section {
-    /* display: flex; */
-    /* backdrop-filter: blur(0px); */
-
-}
 
 nav {
     position:sticky;
@@ -829,7 +824,7 @@ nav .cont ul li:hover a {
     transform: translateX(150%);
 }
 
-.contactshead.slide {
+.slide-conthead {
     transform: translateX(0%);
 }
 
@@ -846,44 +841,189 @@ nav .cont ul li:hover a {
 .contacts-form {
     position: absolute;
     background:rgb(44, 44, 44);
-    width: 600px;
+    width: 40%;
     height: 500px;
+    padding: 40px;
     top: 150px;
     left: 200px;
     border-radius: 15px;
     z-index:9;
+    transform: translateY(0%);
+    transition: 1s ease;
 }
 
-#name {
-    position: absolute;
-    top: 150px;
-    left: 100px;
-    width: 300px;
-    height: 40px;
-    background-color: rgb(110, 110, 110);
-    border:hidden;
-    border-radius:15px;
+.contacts-form h2 {
+    font-size: 50px;
+    font-family: "Ubuntu", sans-serif;
+    color:aquamarine
 }
 
-#e-mail {
-    position: absolute;
-    top: 220px;
-    left: 100px;
-    width: 300px;
-    height: 40px;
-    background-color: rgb(110, 110, 110);
-    border:hidden;
-    border-radius:15px;
+.contacts-form .inputBox {
+    position: relative;
+    width:100%;
+    margin-top: 10px;
+    
+    
 }
-#message {
+
+.contacts-form .inputBox input, 
+.contacts-form .inputBox textarea{
+    position: relative;
+    top: 10px;
+    border:none;
+    display: flex;
+    flex-direction: column;
+    margin-top:40px;
+    width: 100%;
+    height:40px;
+    padding: 5px 0;
+    border:none;
+    outline:none;
+    background: transparent;
+    border-bottom: 2px solid aquamarine;
+    font-size: 20px;
+    color: aliceblue;
+    resize:none;
+    font-size: 18px;
+    font-family: "Roboto Mono", monospace;
+    font-weight: 500;
+    
+}
+.contacts-form .inputBox textarea{
+    height: 90px;
+}
+.contacts-form .inputBox span {
     position: absolute;
-    top: 290px;
-    left: 100px;
-    width: 300px;
-    height: 40px;
-    background-color: rgb(110, 110, 110);
-    border:hidden;
-    border-radius:15px;
+    left:0;
+    bottom: -15px;
+    color: aliceblue;
+    font-size:10px;
+    font-family:'Roboto Mono', monospace;
+    padding: 5px 0;
+    font-size: 18px;
+    margin: 10px 0;
+    pointer-events: none;
+    transition: 0.5s ease;
+}
+
+#textareaSpan {
+    bottom:40px;
+}
+
+.contacts-form .inputBox input:focus ~ span,
+.contacts-form .inputBox input:valid ~ span,
+.contacts-form .inputBox textarea:focus ~ span,
+.contacts-form .inputBox textarea:valid ~ span 
+{
+    color: crimson;
+    transform: translateY(-90%);
+    font-size: 17px;
+}
+.contacts-form .inputBox input[type='submit'] {
+    width:100px;
+    background: crimson;
+    border:none;
+    text-align: center;
+    border-radius: 10px;
+    position: absolute;
+    left: 200px;
+    padding: 6px 27px;
+
+}
+
+.jump {
+    animation: jumper 1s ease;
+}
+
+@keyframes jumper {
+    
+    50% {
+        transform: translateY(-5%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+.container6 {
+    position: absolute;
+    right:20px;
+    top: 200px;
+    height: 400px;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+}
+
+.container .box-cont {
+    height:20%;
+    /* background: rgb(44, 44, 44); */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 40px;
+    transform:translateX(-130%);
+    transition: 1s ease;
+}
+
+.container .box-cont.contslide {
+    transform: translateX(-20%);
+
+
+}
+
+.container .box-cont .icon {
+    font-size:50px;
+    color: aquamarine;
+    transition: 0.5s ease;
+}
+
+.container .box-cont .icon:hover {
+    font-size:60px;
+    color: aquamarine;
+}
+
+.container .box-cont {
+    position: relative;
+}
+
+.container .box-cont:hover .overlay{
+    transform: translateX(100%);
+    opacity: 0.5;
+
+}
+
+.container .box-cont .text h3{
+    color:crimson;
+    font-size:25px;
+    font-family: 'Ubuntu', sans-serif;
+}
+.container .box-cont .text a{
+    font-size:19px;
+    font-family:'Roboto Mono', monospace;
+    text-decoration: none;
+    color:aliceblue;
+    
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 25%;
+    height:100%;
+    width:100%;
+    background:#000000;
+    transition: 1s ease;
+}
+
+#email {
+    font-size:19px;
+    font-family:'Roboto Mono', monospace;
+    text-decoration: none;
+    color:aliceblue;
+    cursor: pointer;
 }
 
 .textMe {

@@ -112,7 +112,7 @@ const textMeController = new ScrollMagic.Controller();
 
 const contactscene = new ScrollMagic.Scene({
     triggerElement: ".text_below",
-    duration: 3000,
+    duration: 2500,
     triggerHook: 0
 
 })
@@ -229,23 +229,25 @@ const projsceneproj_1 = new ScrollMagic.Scene({
 
 const contcontroller = new ScrollMagic.Controller();
 
+const contacts = new ScrollMagic.Scene({
+    triggerElement: "#contacts",
+    duration: 3000,
+    triggerHook: 0.6
+
+})
+.setClassToggle(".container .box-cont", "contslide")
+.addTo(contcontroller);
+
 const contactscenehead = new ScrollMagic.Scene({
     triggerElement: "#contacts",
     duration: 3000,
-    triggerHook: 0.5
+    triggerHook: 0.6
 
 })
-.setClassToggle(".contactshead", "slide")
+.setClassToggle(".contactshead", "slide-conthead")
 .addTo(contcontroller);
 
-const contactscenebg = new ScrollMagic.Scene({
-    triggerElement: "#contacts",
-    duration: 3000,
-    triggerHook: 0.5
 
-})
-.setClassToggle(".contactsbg", "apear")
-.addTo(contcontroller);
 
 window.addEventListener('scroll', ()=> {
     let current = '';
@@ -266,4 +268,14 @@ window.addEventListener('scroll', ()=> {
 
 $('#inner-poly').hover(function () {
     $('#outer-poly').toggleClass('outer-poly-hover');
+});
+
+const emailClick = document.querySelector("#email");
+const formCont = document.querySelector(".contacts-form");
+
+
+emailClick.addEventListener('click', function() {
+    $(".contacts-form").show();
+    $(".contacts-form").toggleClass('jump');
+    console.log('hzuhed')
 });

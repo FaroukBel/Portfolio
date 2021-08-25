@@ -222,11 +222,68 @@
             <section id='contacts'>
                 
                 <h1 class="contactshead">Contacts</h1>
-                <p class="contactPara">Send me a message I'll reply ASAP!</p>
+                <div class="container6">
+                    <div class="box-cont">
+                        <div class="icon"><i class="fab fa-github"></i>
+                        </div>
+                        <div class="text">
+                            <div class="overlay"></div>
+                            <h3>Github</h3>
+                            <a href="https://github.com/SoftDevX/" target="_blank">Check out my GitHub page!</a>
+                        </div>
+                        
+                    </div>
+                    <div class="box-cont">
+                        <div class="icon"><i class="fab fa-linkedin"></i></i>
+                        </div>
+                        <div class="text">
+                            <div class="overlay"></div>
+                            <h3>LinkedIn</h3>
+                            <a href="https://www.linkedin.com/in/farouk-bel-khyate-272384211/" target="_blank">Check out my LinkedIn!</a>
+                        </div>
+                    </div>
+                    <div class="box-cont">
+                        <div class="icon"><i class="fas fa-phone"></i>
+                        </div>
+                        <div class="text">
+                            <div class="overlay"></div>
+
+                            <h3>Phone</h3>
+                            <a>+212.6.24.87.91.83</a>
+                        </div>
+                    </div>
+                    <div class="box-cont">
+                        <div class="icon"><i class="fas fa-at"></i>
+                        </div>
+                        <div class="text">
+                            <div class="overlay"></div>
+                            <h3>E-Mail</h3>
+                            <div id="email">fbelkhayate@hotmail.com</div>
+                        </div>
+                    </div>        
+                </div>
                 <div class="contacts-form">
-                    <input type="text" name="Name" id="name" placeholder="Full Name">
-                    <input type="text" name="Name" id="e-mail">
-                    <input type="text" name="Name" id="message">
+                    <form action="POST" data-netlify="true">
+                        <h2>Send Message</h2>
+                        <div class="inputBox">
+                            <input type="text" name='Full Name' required='required'>
+                            <span>Full Name</span>
+                        </div>
+                        <div class="inputBox">
+                            <input type="text" name='E-Mail' required='required'>
+                            <span>E-Mail</span>
+                        </div>
+                        <div class="inputBox">
+                            <textarea name="Message" required='required'></textarea>
+                            <span id='textareaSpan'>Type your Message...</span>
+                        </div>
+                        <div class="inputBox">
+                            <input type="submit" name="" value="Send">
+                        </div>
+                        
+
+                    </form>
+                    
                 </div>
             </section>
             
