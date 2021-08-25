@@ -927,7 +927,7 @@ nav .cont ul li:hover a {
     border-radius: 10px;
     position: absolute;
     left: 200px;
-    padding: 6px 27px;
+    padding: 6px 26px;
 
 }
 
@@ -959,19 +959,24 @@ nav .cont ul li:hover a {
 
 .container .box-cont {
     height:20%;
-    /* background: rgb(44, 44, 44); */
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     align-items: center;
-    border-radius: 40px;
-    transform:translateX(-130%);
+    transform:translateX(-100%);
     transition: 1s ease;
 }
 
 .container .box-cont.contslide {
-    transform: translateX(-20%);
+    transform: translateX(0%);
 
 
+}
+
+#name:-webkit-search-cancel-button{
+    -webkit-appearance: none;
+}
+#email:-webkit-search-cancel-button{
+    -webkit-appearance: none;
 }
 
 .container .box-cont .icon {
@@ -994,7 +999,9 @@ nav .cont ul li:hover a {
     opacity: 0.5;
 
 }
-
+.container .box-cont .text {
+    margin-left: 10px;
+}
 .container .box-cont .text h3{
     color:crimson;
     font-size:25px;
@@ -1011,7 +1018,7 @@ nav .cont ul li:hover a {
 .overlay {
     position: absolute;
     top: 0;
-    left: 25%;
+    left: 9%;
     height:100%;
     width:100%;
     background:#000000;
