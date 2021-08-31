@@ -271,11 +271,47 @@ $('#inner-poly').hover(function () {
 });
 
 const emailClick = document.querySelector("#email");
-const formCont = document.querySelector(".contacts-form");
+const contact_cont = document.getElementById("contacts")
+const contact_Form = document.getElementById("contacts-form-id")
 
+// emailClick.addEventListener('click', function() {
+//     $(".contacts-form").show();
+//     $(".contacts-form").addClass('jump');
+// });
 
-emailClick.addEventListener('click', function() {
-    $(".contacts-form").show();
-    $(".contacts-form").toggleClass('jump');
-    console.log('hzuhed')
-});
+$("#email").click(function() {
+    contact_cont.removeChild(contact_Form)
+    contact_cont.appendChild(contact_Form)
+    $(".contacts-form").addClass("jump");
+})
+
+const copiesArray = ["Double copy", "Triple", "Quadcopy!", "Enough!"]
+
+const numberText = document.getElementById("number");
+const testT = document.querySelector('.times-copy');
+var copyCountair = 0;
+$("#number").hover(function () {
+    $(".copied").toggleClass('copiedApear');
+})
+numberText.addEventListener("click", function() {
+    document.execCommand("copy");
+    $(".copied").toggleClass('copiedColored');
+    testT.textContent = copiesArray[copyCountair];
+    $(".times-copy").css('opacity', '1');
+    if (copyCountair>=copiesArray.length){
+        copyCountair = copyCountair;
+    }
+    else if (copyCountair + 1<copiesArray.length){
+        copyCountair += 1;
+    }
+})
+
+const submit_id = document.getElementById('submit-input');
+
+$('#submitBtn').click(function () {
+    submit_id.removeChild(this)
+    submit_id.appendChild(this)
+    $(this).addClass('contact-submit-animation')
+    
+
+})

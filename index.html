@@ -220,7 +220,6 @@
                 </div>
             </section>
             <section id='contacts'>
-                
                 <h1 class="contactshead">Contacts</h1>
                 <div class="container6">
                     <div class="box-cont">
@@ -231,7 +230,6 @@
                             <h3>Github</h3>
                             <a href="https://github.com/SoftDevX/" target="_blank">Check out my GitHub page!</a>
                         </div>
-                        
                     </div>
                     <div class="box-cont">
                         <div class="icon"><i class="fab fa-linkedin"></i></i>
@@ -247,9 +245,11 @@
                         </div>
                         <div class="text">
                             <div class="overlay"></div>
-
                             <h3>Phone</h3>
-                            <a>+212.6.24.87.91.83</a>
+                            <a id="number">+212.6.24.87.91.83</a>
+                        </div>
+                        <div class="copied"><i class="far fa-copy">  </i>
+                        <div class="times-copy"></div>
                         </div>
                     </div>
                     <div class="box-cont">
@@ -262,7 +262,7 @@
                         </div>
                     </div>        
                 </div>
-                <div class="contacts-form">
+                <div id="contacts-form-id" class="contacts-form">
                     <form autocomplete="off" action="POST" data-netlify="true">
                         <h2>Send Message</h2>
                         <div class="inputBox">
@@ -270,20 +270,19 @@
                             <span>Full Name</span>
                         </div>
                         <div class="inputBox">
-                            <input type="search" id="email" name='E-Mail' required='required'>
+                            <input type="search" id="emailInput" name='E-Mail' required='required'>
                             <span>E-Mail</span>
                         </div>
                         <div class="inputBox">
                             <textarea name="Message" required='required'></textarea>
                             <span id='textareaSpan'>Type your Message...</span>
                         </div>
-                        <div class="inputBox">
-                            <input type="submit" name="" value="Send">
+                        <div id='submit-input' class="inputBox">
+                            <button id='submitBtn'>
+                                <i class="far fa-paper-plane"></i>
+                            </button>
                         </div>
-                        
-
                     </form>
-                    
                 </div>
             </section>
             

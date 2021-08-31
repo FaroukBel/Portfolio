@@ -842,7 +842,7 @@ nav .cont ul li:hover a {
     position: absolute;
     background:rgb(44, 44, 44);
     width: 40%;
-    height: 500px;
+    height: 75%;
     padding: 40px;
     top: 150px;
     left: 200px;
@@ -850,12 +850,17 @@ nav .cont ul li:hover a {
     z-index:9;
     transform: translateY(0%);
     transition: 1s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .contacts-form h2 {
     font-size: 50px;
     font-family: "Ubuntu", sans-serif;
-    color:aquamarine
+    color:aquamarine;
+    position: absolute;
+    top: 5%;
 }
 
 .contacts-form .inputBox {
@@ -919,16 +924,26 @@ nav .cont ul li:hover a {
     transform: translateY(-90%);
     font-size: 17px;
 }
-.contacts-form .inputBox input[type='submit'] {
-    width:100px;
-    background: crimson;
+.contacts-form #submitBtn {
+    font-size: 60px;
+    color: crimson;
+    background: none;
     border:none;
-    text-align: center;
-    border-radius: 10px;
-    position: absolute;
-    left: 200px;
-    padding: 6px 26px;
+    display:block;
+    margin-top:10%;
+    margin-left: 40%;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
 
+.contacts-form #submitBtn:hover {
+    transform:rotateZ(45deg)
+    
+}
+
+
+.contact-submit-animation {
+    animation: contact-submit-kf 1s ease;
 }
 
 .jump {
@@ -945,12 +960,24 @@ nav .cont ul li:hover a {
         transform: translateY(0%);
     }
 }
+@keyframes contact-submit-kf {
+    0% {
+        
+        transform:translateX(0%) rotateZ(45deg);
+
+    }
+
+    100% {
+        transform:translateX(70rem)rotateZ(45deg);
+
+    }
+}
 
 .container6 {
     position: absolute;
     right:20px;
     top: 200px;
-    height: 400px;
+    height: 65%;
     width: 600px;
     display: flex;
     flex-direction: column;
@@ -960,7 +987,6 @@ nav .cont ul li:hover a {
 .container .box-cont {
     height:20%;
     display: flex;
-    /* justify-content: space-around; */
     align-items: center;
     transform:translateX(-100%);
     transition: 1s ease;
@@ -968,8 +994,6 @@ nav .cont ul li:hover a {
 
 .container .box-cont.contslide {
     transform: translateX(0%);
-
-
 }
 
 #name:-webkit-search-cancel-button{
@@ -997,7 +1021,6 @@ nav .cont ul li:hover a {
 .container .box-cont:hover .overlay{
     transform: translateX(100%);
     opacity: 0.5;
-
 }
 .container .box-cont .text {
     margin-left: 10px;
@@ -1025,12 +1048,54 @@ nav .cont ul li:hover a {
     transition: 1s ease;
 }
 
+#number {
+    cursor: pointer;
+}
+
+
+
 #email {
     font-size:19px;
     font-family:'Roboto Mono', monospace;
     text-decoration: none;
     color:aliceblue;
     cursor: pointer;
+}
+
+
+.copied {
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    color: aquamarine;
+    right: 47%;
+    font-size:30px;
+    transition: 1s ease;
+    opacity: 0;
+    transform:translateY(10%)
+
+}
+
+.copiedColored {
+    transition:0.2s ease;
+    color: crimson;
+}
+
+.copiedApear {
+    opacity:1;
+    transform:translateY(-10%)
+}
+
+.times-copy {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 15px;
+    color:aquamarine;
+    position:absolute;
+    left: 40px;
+    bottom: 20px;
+    width: 100px;
+    transition: 0.5s ease;
+    opacity:0;
 }
 
 .textMe {
