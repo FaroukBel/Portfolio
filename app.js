@@ -124,14 +124,14 @@ const aboutcontroller = new ScrollMagic.Controller();
 
 const aboutscene = new ScrollMagic.Scene({
     triggerElement: ".about",
-    duration: 300
+    duration: 300,
+    triggerHook: 0.85
+
 
 })
 .setTween(abouttween)
 
 .addTo(aboutcontroller);
-
-
 
 const aboutscenesvg = new ScrollMagic.Scene({
     triggerElement: ".about",
@@ -179,7 +179,9 @@ skilltween.add (
 const skillscontroller = new ScrollMagic.Controller();
 const skillsscene = new ScrollMagic.Scene({
     triggerElement: ".skills",
-    duration: 300
+    duration: 300,
+    triggerHook: 0.8
+
 
 })
 
@@ -193,7 +195,9 @@ const skillssceneSvg= new ScrollMagic.Scene({
     triggerHook: 0.8
 
 })
-.setClassToggle(".skillssvg", "apear")
+.on("start", function() {
+    $(".skillssvg").toggleClass('apear')
+})
 .addTo(skillscontroller);
 
 
@@ -212,17 +216,22 @@ const projsceneHead = new ScrollMagic.Scene({
     triggerHook: 0.5
 
 })
-.setClassToggle(".projectshead", "slide")
-.addTo(projcontroller);
 
-const projsceneproj_1 = new ScrollMagic.Scene({
-    triggerElement: "#project",
-    duration: 3000,
-    triggerHook: 0.5
-
+.on("start", function(){
+    $(".projectshead").toggleClass("slide")
+    $(".box").toggleClass("apear")
+    $(".projectPara").toggleClass("apear")
 })
-.setClassToggle(".box", "apear")
 .addTo(projcontroller);
+
+// const projsceneprojBox = new ScrollMagic.Scene({
+//     triggerElement: "#project",
+//     duration: 3000,
+//     triggerHook: 0.5
+
+// })
+// .setClassToggle(".box", "apear")
+// .addTo(projcontroller);
 
 
 // Contacts controller
@@ -285,7 +294,7 @@ $("#email").click(function() {
     $(".contacts-form").addClass("jump");
 })
 
-const copiesArray = ["Double copy", "Triple", "Quadcopy!", "Enough!"]
+const copiesArray = ["Copied!", "Double copy", "Triple", "Quadcopy!", "Enough!"]
 
 const numberText = document.getElementById("number");
 const testT = document.querySelector('.times-copy');
@@ -294,7 +303,7 @@ $("#number").hover(function () {
     $(".copied").toggleClass('copiedApear');
 })
 numberText.addEventListener("click", function() {
-    document.execCommand("copy");
+    navigator.clipboard.writeText(numberText.textContent)
     $(".copied").toggleClass('copiedColored');
     testT.textContent = copiesArray[copyCountair];
     $(".times-copy").css('opacity', '1');
@@ -312,6 +321,5 @@ $('#submitBtn').click(function () {
     submit_id.removeChild(this)
     submit_id.appendChild(this)
     $(this).addClass('contact-submit-animation')
-    
-
 })
+
