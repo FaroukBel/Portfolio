@@ -205,36 +205,6 @@ const sections = document.querySelectorAll('section');
 const navLi = document.querySelectorAll('nav ul li');
 
 
-// PROJECTS CONTROLLER
-
-const projcontroller = new ScrollMagic.Controller();
-
-
-const projsceneHead = new ScrollMagic.Scene({
-    triggerElement: "#project",
-    duration: 3000,
-    triggerHook: 0.5
-
-})
-
-.on("start", function(){
-    $(".projectshead").toggleClass("slide")
-    $(".box").toggleClass("apear")
-    $(".projectPara").toggleClass("apear")
-})
-.addTo(projcontroller);
-
-// const projsceneprojBox = new ScrollMagic.Scene({
-//     triggerElement: "#project",
-//     duration: 3000,
-//     triggerHook: 0.5
-
-// })
-// .setClassToggle(".box", "apear")
-// .addTo(projcontroller);
-
-
-// Contacts controller
 
 const contcontroller = new ScrollMagic.Controller();
 
@@ -283,10 +253,6 @@ const emailClick = document.querySelector("#email");
 const contact_cont = document.getElementById("contacts")
 const contact_Form = document.getElementById("contacts-form-id")
 
-// emailClick.addEventListener('click', function() {
-//     $(".contacts-form").show();
-//     $(".contacts-form").addClass('jump');
-// });
 
 $("#email").click(function() {
     contact_cont.removeChild(contact_Form)
