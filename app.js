@@ -269,7 +269,7 @@ $("#number").hover(function () {
     $(".copied").toggleClass('copiedApear');
 })
 numberText.addEventListener("click", function() {
-    navigator.clipboard.writeText(numberText.textContent)
+    navigator.clipboard.writeText("0624879183")
     $(".copied").toggleClass('copiedColored');
     testT.textContent = copiesArray[copyCountair];
     $(".times-copy").css('opacity', '1');
