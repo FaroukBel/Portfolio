@@ -305,3 +305,11 @@ $('#conli').click(function () {
     document.getElementById('contacts').scrollIntoView(true);
 
 })
+$('#textme').click(function () {
+    document.getElementById('contacts').scrollIntoView(true);
+
+})
+$('#conbtn').click(function () {
+    document.getElementById('contacts').scrollIntoView(true);
+
+})
