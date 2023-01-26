@@ -23,7 +23,7 @@ const typedTextSpan_2 = document.querySelector('.intro_head');
 const cursorSpan = document.querySelector('.cursor');
 const introSpan = document.querySelector(".intro");
 
-const textArray = ["", ' a Student.', " a DEVELOPER.", " a DREAMER!"];
+const textArray = ["", ' a Student.', " a THINKER.", " a DREAMER!"];
 const typingDelay = 50;
 const erasingDelay = 25;
 const newTextDelay = 1000;
@@ -160,6 +160,8 @@ const aboutscenetextAuto = new ScrollMagic.Scene({
 
 const skillElement = document.getElementsByClassName('skillshead');
 const skillParaElement = document.getElementsByClassName('skillparagraph');
+const skillParaElement2 = document.getElementsByClassName('skillpara2')
+const skillParaElement3 = document.getElementsByClassName('skillpara3')
 const skilltween = new TimelineLite();
 
 const flightPathSkill = {
@@ -168,7 +170,7 @@ const flightPathSkill = {
         {x:0, y:0}
     ]
 }
-const skillElementsArray = [skillElement, skillParaElement];
+const skillElementsArray = [skillElement, skillParaElement, skillParaElement2, skillParaElement3];
 skilltween.add (
     TweenLite.to(skillElementsArray, 1, {
         bezier: flightPathSkill,
@@ -281,11 +283,25 @@ numberText.addEventListener("click", function() {
     }
 })
 
-const submit_id = document.getElementById('submit-input');
+// const submit_id = document.getElementById('submit-input');
 
-$('#submitBtn').click(function () {
-    submit_id.removeChild(this)
-    submit_id.appendChild(this)
-    $(this).addClass('contact-submit-animation')
+// $('#submitBtn').click(function () {
+//     submit_id.removeChild(this)
+//     submit_id.appendChild(this)
+//     $(this).addClass('contact-submit-animation')
+// })
+
+$('#abtli').click(function () {
+    document.getElementById('aboutme').scrollIntoView(true);
+
 })
 
+$('#skill-li').click(function () {
+    document.getElementById('skillhead').scrollIntoView(true);
+
+})
+
+$('#conli').click(function () {
+    document.getElementById('contacts').scrollIntoView(true);
+
+})
