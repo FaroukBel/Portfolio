@@ -283,13 +283,13 @@ numberText.addEventListener("click", function() {
     }
 })
 
-// const submit_id = document.getElementById('submit-input');
+const bodyText = document.getElementById('bodyText');
+const subText = document.getElementById('name');
+$('#submitBtn').click(function () {
+    window.open(`mailto:fbelkhyate@gmail.com?subject=${subText.value}&body=${bodyText.value}`);
 
-// $('#submitBtn').click(function () {
-//     submit_id.removeChild(this)
-//     submit_id.appendChild(this)
-//     $(this).addClass('contact-submit-animation')
-// })
+
+})
 
 $('#abtli').click(function () {
     document.getElementById('aboutme').scrollIntoView(true);
