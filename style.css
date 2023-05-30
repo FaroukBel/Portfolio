@@ -1757,7 +1757,7 @@ justify-content: center;
     height: 100vh;
   }
   #fb-img{
-    width: 120px;
+   display: none;
   }
   #mobile-diclamar{
     margin-top: 10px;
