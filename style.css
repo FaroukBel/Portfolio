@@ -1750,10 +1750,14 @@ justify-content: center;
   }
 
   .mobile {
-    display: block;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background-color: black;
     height: 100vh;
+  }
+  #fb-img{
+    width: 120px;
   }
   #mobile-diclamar{
     margin-top: 10px;
@@ -1795,6 +1799,7 @@ justify-content: center;
   }
   #contacts-mobile {
     display: flex;
+    margin-top: 10px;
     flex-direction: column;
     margin-left: 10px;
     transition: 1s ease;
@@ -1853,21 +1858,10 @@ justify-content: center;
     font-size: 13px;
   }
 
-  .contacts-form {
-    background: rgb(44, 44, 44);
-    width: 95%;
-    height: auto;
-    
-    padding: 40px;
-    border-radius: 15px;
-    z-index: 9;
-    transition: 1s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
+   .contacts-form {
+    display: none;
   }
-
+/*
   .contacts-form h2 {
     font-size: 20px;
     font-family: "Ubuntu", sans-serif;
@@ -1935,11 +1929,11 @@ justify-content: center;
     margin-top: 20px;
     cursor: pointer;
     transition: 0.5s ease;
-  }
-
+  } */
+/* 
 
   .contact-submit-animation {
     animation: contact-submit-kf 1s ease;
-  }
+  } */
   
 }
