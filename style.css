@@ -1672,17 +1672,44 @@
     background-color: black;
     height: 100vh;
   }
+  #mobile-diclamar{
+    margin-top: 10px;
 
+    font-size: 20px;
+    font-family: "Ubuntu", sans-serif;
+    color: aquamarine;
+    text-align: left;
+    letter-spacing: 3px;
+    transition: 1s ease;
+    cursor: default;
+    white-space: nowrap;
+  }
   #mobile-disc {
-    margin: 20px;
     font-size: 10px;
     font-family: "Roboto Mono", monospace;
     line-height: 40px;
     color: aliceblue;
+    text-align: left;
+
+    width: 100%;
+    cursor: default;
+  }
+  #mobile-disclamar-para {
+
+    font-size: 10px;
+    font-family: "Roboto Mono", monospace;
+    line-height: 40px;
+    color: aliceblue;
+    text-align: left;
     width: 100%;
     cursor: default;
   }
 
+  .disclamar-container{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+  }
   #contacts-mobile {
     display: flex;
     flex-direction: column;
@@ -1831,4 +1858,5 @@
   .contact-submit-animation {
     animation: contact-submit-kf 1s ease;
   }
+  
 }
