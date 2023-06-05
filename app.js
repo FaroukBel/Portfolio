@@ -23,7 +23,7 @@ const typedTextSpan_2 = document.querySelector('.intro_head');
 const cursorSpan = document.querySelector('.cursor');
 const introSpan = document.querySelector(".intro");
 
-const textArray = ["", ' a Student.', " a THINKER.", " a DREAMER!"];
+const textArray = ["", ' a DEVELOPER.', " a THINKER.", " a DREAMER!"];
 const typingDelay = 50;
 const erasingDelay = 25;
 const newTextDelay = 1000;
